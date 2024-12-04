@@ -63,6 +63,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// pantalla de farmacias
 @Composable
 fun PharmacyScreen(
     pharmacies: List<Pharmacy>,
@@ -82,6 +83,7 @@ fun PharmacyScreen(
     }
 }
 
+// lista de farmacias
 @Composable
 fun PharmacyList(pharmacies: List<Pharmacy>) {
     LazyColumn(
@@ -95,6 +97,7 @@ fun PharmacyList(pharmacies: List<Pharmacy>) {
     }
 }
 
+//formato de farmacia individual
 @Composable
 fun PharmacyCard(pharmacy: Pharmacy) {
     Card(

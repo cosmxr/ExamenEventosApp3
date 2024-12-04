@@ -8,6 +8,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.google.gson.JsonSyntaxException
 
+//metodos para obtener las farmacias de la api y guardarlas en firestore,tambien para obtenerlas de firestore
 class PharmacyRepository {
 
 /*

@@ -3,7 +3,7 @@ package com.example.exameneventosapp3
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-
+//raiz de la direccion api
 interface PharmacyApiService {
     @GET("sede/servicio/farmacia")
     fun getPharmacies(

@@ -3,7 +3,7 @@ package com.example.exameneventosapp3
 import android.os.Parcel
 import android.os.Parcelable
 
-
+//clase farmacia, con sus atributos parceables
 data class Pharmacy(
     val id: String = "",
     val title: String = "",

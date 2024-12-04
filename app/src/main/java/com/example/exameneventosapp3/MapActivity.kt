@@ -1,23 +1,24 @@
 package com.example.exameneventosapp3
 
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.preference.PreferenceManager
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 
+//actividad que muestra un mapa con las farmacias
 class MapActivity : ComponentActivity() {
     private lateinit var mapView: MapView
     private val pharmacies: List<Pharmacy> by lazy {
         intent.getParcelableArrayListExtra<Pharmacy>("pharmacies") ?: emptyList()
     }
-
+//se crea el mapa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this))
@@ -28,7 +29,7 @@ class MapActivity : ComponentActivity() {
         setContent {
             MapScreen(mapView)
         }
-
+//se añaden los marcadores de las farmacias
         pharmacies.forEach { pharmacy ->
             val marker = Marker(mapView)
             marker.position = GeoPoint(pharmacy.latitude, pharmacy.longitude)
@@ -42,7 +43,7 @@ class MapActivity : ComponentActivity() {
             mapView.controller.setZoom(12.0)
             mapView.controller.setCenter(GeoPoint(firstPharmacy.latitude, firstPharmacy.longitude))
         } else {
-            // Default to Zaragoza if no pharmacies are available
+            // Default, location
             val zaragoza = GeoPoint(41.648823, -0.889085)
             mapView.controller.setZoom(12.0)
             mapView.controller.setCenter(zaragoza)

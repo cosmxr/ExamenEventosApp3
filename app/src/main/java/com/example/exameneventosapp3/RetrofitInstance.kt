@@ -4,6 +4,7 @@ package com.example.exameneventosapp3
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+//clase para obtener la instancia de retrofit
 object RetrofitInstance {
     private const val BASE_URL = "https://www.zaragoza.es/"
 
