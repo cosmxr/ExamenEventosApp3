@@ -62,3 +62,5 @@ La aplicación requiere los siguientes permisos en el archivo `AndroidManifest.x
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+link al repositorio: https://github.com/cosmxr/ExamenEventosApp3.git
